@@ -13,8 +13,7 @@ from langchain.chains import RetrievalQAWithSourcesChain
 llm=ChatGoogleGenerativeAI(
             model="gemini-1.5-pro",  # or gemini-1.5-pro
             temperature=0.5,
-            google_api_key="AIzaSyBJIuu49S76KqdDslnTnO5GPtGMnJpEcLU"
-)
+            google_api_key="your_api_key"
 st.title('News Research Tool')
 st.sidebar.text("News Articles URLs")
 if "vectorstore" not in st.session_state:
