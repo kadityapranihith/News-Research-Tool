@@ -1,7 +1,8 @@
 streamlit
-langchain
+langchain[hub,huggingface]
 langchain-google-genai
-faiss-cpu
 sentence-transformers
+transformers
+faiss-cpu
 unstructured
 tqdm
