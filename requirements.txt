@@ -3,6 +3,7 @@ langchain[hub,huggingface]
 langchain-google-genai
 sentence-transformers
 transformers
+torch
 faiss-cpu
 unstructured
 tqdm
