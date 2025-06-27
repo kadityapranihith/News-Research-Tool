@@ -1,6 +1,12 @@
 # 📰 News Research Tool
 
+[![Made with Streamlit](https://img.shields.io/badge/Made%20with-Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://streamlit.io)
+
 An AI-powered research assistant that takes news article URLs, processes their content, and lets you ask questions — with answers backed by source links. Built using **Gemini (Google GenAI)**, **LangChain**, **FAISS**, and **Streamlit**.
+
+---
+
+![News Research Tool Preview](./preview.png)
 
 ---
 
@@ -36,10 +42,8 @@ To use this project, you need a **Google Gemini API key**.
 > 🔑 Get your free API key from:  
 > [https://makersuite.google.com/app/apikey](https://makersuite.google.com/app/apikey)
 
-Then, in the Python code:
-```python
-llm = ChatGoogleGenerativeAI(
-    model="gemini-1.5-flash",
-    temperature=0.5,
-    google_api_key="YOUR_GEMINI_API_KEY"
-)
+### 🧾 How to Use It
+
+1. Run the app with:
+   ```bash
+   streamlit run main.py
