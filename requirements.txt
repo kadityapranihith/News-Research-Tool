@@ -8,6 +8,3 @@ faiss-cpu==1.8.0
 unstructured==0.13.0
 tqdm==4.66.4
 tiktoken==0.6.0
-libmagic==1.0
-python-magic==0.4.27
-python-magic-bin==0.4.14
