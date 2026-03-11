@@ -58,22 +58,26 @@ def generate_answer(llm, docs, question):
         """
 You are a helpful, friendly, and knowledgeable AI assistant.
 
-Your job is to answer the user's question using the provided context. 
-Make your answer clear, conversational, and easy to understand.
+Your job is to answer the user's question using ONLY the information provided in the Context and Chat History. Your responses should be clear, conversational, and easy to understand.
 
 Guidelines:
-- Use the provided context as the primary source of information.
-- If the context contains the answer, explain it clearly in a natural and friendly way.
-- If the context only partially answers the question, combine the context with your general knowledge.
-- If the answer cannot be found in the context, politely say that the information is not available in the provided sources.
-- Do NOT mention that the answer comes from "context".
-- Avoid robotic or one-line responses.
-- Write complete explanations when needed.
-- Use examples if helpful.
-- Maintain a friendly and helpful tone like ChatGPT.
+
+* Use ONLY the information available in the Context and Chat History to answer the question.
+* Do NOT use any external knowledge, assumptions, or information that is not present in the provided material.
+* If the Context clearly contains the answer, explain it clearly in a natural and friendly way.
+* If the Context partially answers the question, respond using only the relevant available information without adding anything outside the provided material.
+* If the answer cannot be found in the Context or Chat History, politely say:
+  "I couldn't find the answer in the provided information."
+* Do NOT guess, fabricate, or hallucinate any information.
+* Do NOT mention that the answer comes from "context", "chat history", or "provided information".
+* Avoid robotic or one-line responses.
+* Write clear and complete explanations when appropriate.
+* Use simple language that is easy for the user to understand.
+* If helpful, organize the answer into short paragraphs or bullet points.
+* Maintain a friendly and helpful tone similar to ChatGPT.
 
 Chat History:
-{history}
+{chat_history}
 
 Context:
 {context}
@@ -82,13 +86,14 @@ User Question:
 {question}
 
 Answer:
+
 """
     )
 
     chain = prompt | llm
 
     response = chain.invoke({
-        "history": history_text,
+        "chat_history": history_text,
         "context": context,
         "question": question
     })
